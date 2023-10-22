@@ -5,10 +5,10 @@
         <g transform="matrix(1,0,0,0.80127,0,73.3333)">
             <path d="M-461.948,369.011L-577.434,484.497C-258.691,803.241 258.691,803.241 577.434,484.497L461.948,369.01C206.722,624.237 -206.722,624.237 -461.948,369.011Z" style="fill:white;fill-rule:nonzero;stroke:white;stroke-width:95.07px;"/>
         </g>
-        <g transform="matrix(2.78774,0,0,2.78774,-945.481,-1276.84)">
+        <g transform="matrix(2.78774,0,0,2.78774,-945.481,-1302.95)">
             <g transform="matrix(565.825,0,0,565.825,465.832,574.406)">
             </g>
-            <text x="216.073px" y="574.406px" style="font-family:'Gabriola', fantasy;font-size:565.825px;fill:white;stroke:white;stroke-width:23.44px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:2;">Z</text>
+            <text x="216.073px" y="574.406px" style="font-family:'Gabriola', fantasy;font-size:565.825px;stroke:white;stroke-width:53.81px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:2;">Z</text>
         </g>
     </g>
 </svg>
