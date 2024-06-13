@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useUser } from "@clerk/clerk-react";
+import { useUser } from "@clerk/nextjs";
 import { PlusCircle } from "lucide-react";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";
@@ -28,7 +28,7 @@ const DocumentsPage = () => {
   };
 
   return (
-    <div className=" flex h-full flex-col items-center justify-center space-y-4">
+    <div className="flex h-full flex-col items-center justify-center space-y-4">
       <Image
         src="/empty.png"
         height="300"
