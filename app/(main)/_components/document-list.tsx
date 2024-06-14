@@ -1,6 +1,7 @@
 "use client";
 
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "@/lib/i18n"
+import { useParams } from "next/navigation";
 import { useState } from "react";
 import { useQuery } from "convex/react";
 import { FileIcon } from "lucide-react";

@@ -9,7 +9,8 @@ import {
   Settings,
   Trash,
 } from "lucide-react";
-import { useParams, usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "@/lib/i18n"
+import { useParams } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { useMutation } from "convex/react";

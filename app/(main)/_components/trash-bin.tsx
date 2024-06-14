@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "@/lib/i18n"
+import { useParams } from "next/navigation";
 import { useQuery, useMutation } from "convex/react";
 import { Search, Trash, Undo } from "lucide-react";
 import { toast } from "sonner";

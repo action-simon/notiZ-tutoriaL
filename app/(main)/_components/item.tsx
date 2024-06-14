@@ -9,7 +9,7 @@ import {
   Trash,
 } from "lucide-react";
 import { useMutation } from "convex/react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/lib/i18n";
 import { toast } from "sonner";
 
 import { Id } from "@/convex/_generated/dataModel";

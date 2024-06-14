@@ -2,7 +2,7 @@
 
 import { useConvexAuth } from "convex/react";
 import { SignInButton, UserButton } from "@clerk/nextjs";
-import Link from "next/link";
+import { Link } from "@/lib/i18n";
 
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -11,6 +11,7 @@ import { Spinner } from "@/components/spinner";
 import { cn } from "@/lib/utils";
 
 import { Logo } from "./logo";
+import { SelectLanguage } from "@/components/switch-langguage";
 
 export const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -47,6 +48,7 @@ export const Navbar = () => {
           </>
         )}
         <ModeToggle />
+        <SelectLanguage />
       </div>
     </div>
   );

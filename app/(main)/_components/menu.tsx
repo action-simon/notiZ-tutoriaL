@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/lib/i18n";
 import { useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";

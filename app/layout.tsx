@@ -1,3 +1,5 @@
+import { LanguageProvider } from "@inlang/paraglide-next"
+import { languageTag } from "@/paraglide/runtime.js"
 import { Toaster } from "sonner";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
@@ -37,7 +39,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <LanguageProvider>
+   <html lang={languageTag()} suppressHydrationWarning>
       <body className={inter.className}>
         <ConvexClientProvider>
           <EdgeStoreProvider>
@@ -56,5 +59,6 @@ export default function RootLayout({
         </ConvexClientProvider>
       </body>
     </html>
+ </LanguageProvider>
   );
 }

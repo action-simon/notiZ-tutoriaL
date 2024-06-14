@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { File } from "lucide-react";
 import { useQuery } from "convex/react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/lib/i18n";
 import { useUser } from "@clerk/nextjs";
 import {
   CommandDialog,
