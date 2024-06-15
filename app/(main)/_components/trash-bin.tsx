@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "@/lib/i18n"
+import { useRouter } from "@/lib/i18n";
 import { useParams } from "next/navigation";
 import { useQuery, useMutation } from "convex/react";
 import { Search, Trash, Undo } from "lucide-react";
 import { toast } from "sonner";
-
+import * as m from "@/paraglide/messages.js";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { Spinner } from "@/components/spinner";
@@ -38,9 +38,9 @@ export const TrashBin = () => {
     const promise = restore({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Restoring notiZ...",
-      success: "notiZ restored",
-      error: "Failed to restore notiZ",
+      loading: m.Restoring_notiZ_(),
+      success: m.notiZ_restored(),
+      error: m.Failed_to_restore_notiZ(),
     });
   };
 
@@ -48,9 +48,9 @@ export const TrashBin = () => {
     const promise = remove({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Removing notiZ...",
-      success: "notiZ removed",
-      error: "Failed to remove notiZ",
+      loading: m.Removing_notiZ_(),
+      success: m.notiZ_removed(),
+      error: m.Failed_to_remove_notiZ(),
     });
 
     if (params.documentId === documentId) {
@@ -67,7 +67,7 @@ export const TrashBin = () => {
   }
 
   return (
-    <div className="text-sm  ">
+    <div className="text-sm">
       <div className="flex items-center gap-x-1 p-2">
         <Search className="h-4 w-4" />
         <Input
@@ -79,14 +79,14 @@ export const TrashBin = () => {
       </div>
       <div className="mt-2 px-1 pb-1">
         <p className="hidden pb-2 text-center text-xs text-muted-foreground last:block">
-          No documents found.
+          {m.No_documents_found_()}
         </p>
         {filteredDocuments?.map((document) => (
           <div
             key={document._id}
             role="button"
             onClick={() => onClick(document._id)}
-            className="flex w-full items-center justify-between rounded-sm text-sm text-primary hover:bg-primary/5 "
+            className="flex w-full items-center justify-between rounded-sm text-sm text-primary hover:bg-primary/5"
           >
             <span className="truncate pl-2">{document.title}</span>
             <div className="flex items-center">
