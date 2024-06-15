@@ -1,11 +1,11 @@
 "use client";
 
-import { useRouter } from "@/lib/i18n"
+import { useRouter } from "@/lib/i18n";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { useQuery } from "convex/react";
 import { FileIcon } from "lucide-react";
-
+import * as m from "@/paraglide/messages.js";
 import { Doc, Id } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
@@ -65,7 +65,7 @@ export const DocumentList = ({
           level === 0 && "hidden",
         )}
       >
-        No pages inside
+        {m.No_pages_inside()}
       </p>
       {documents.map((document) => (
         <div key={document._id}>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-
+import * as m from "@/paraglide/messages.js";
 import { Logo } from "./logo";
 
 export const Footer = () => {
@@ -8,10 +8,10 @@ export const Footer = () => {
       <Logo />
       <div className="flex w-full items-center justify-between gap-x-2 text-muted-foreground md:ml-auto md:justify-end">
         <Button variant="ghost" size="sm">
-          Privacy Policy
+          {m.Privacy_Policy()}
         </Button>
         <Button variant="ghost" size="sm">
-          Terms & Conditions
+          {m.Terms_Conditions()}
         </Button>
       </div>
     </div>

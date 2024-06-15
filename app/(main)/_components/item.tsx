@@ -11,7 +11,7 @@ import {
 import { useMutation } from "convex/react";
 import { useRouter } from "@/lib/i18n";
 import { toast } from "sonner";
-
+import * as m from "@/paraglide/messages.js";
 import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -61,9 +61,9 @@ export const Item = ({
     const promise = archive({ id }).then(() => router.push("/documents"));
 
     toast.promise(promise, {
-      loading: "Moving to trash...",
-      success: "notiZ moved to trash",
-      error: "Failed to archive notiZ",
+      loading: m.Moving_to_trash_(),
+      success: m.notiZ_moved_to_trash(),
+      error: m.Failed_to_archive_notiZ(),
     });
   };
 
@@ -85,9 +85,9 @@ export const Item = ({
     );
 
     toast.promise(promise, {
-      loading: "Creating a new notiZ...",
-      success: "New notiZ created",
-      error: "Failed to create a new notiZ",
+      loading: m.Creating_a_new_notiZ_(),
+      success: m.New_notiZ_created(),
+      error: m.Failed_to_create_a_new_notiZ(),
     });
   };
 
@@ -145,11 +145,11 @@ export const Item = ({
             >
               <DropdownMenuItem onClick={onArchive}>
                 <Trash className="mr-2 h-4 w-4" />
-                Delete
+                {m.Delete()}
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <div className="p-2 text-xs text-muted-foreground">
-                Last edited by: {user?.username}
+                {m.Last_edited_by()} {user?.username}
               </div>
             </DropdownMenuContent>
           </DropdownMenu>

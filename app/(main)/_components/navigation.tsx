@@ -9,13 +9,13 @@ import {
   Settings,
   Trash,
 } from "lucide-react";
-import { usePathname, useRouter } from "@/lib/i18n"
+import { usePathname, useRouter } from "@/lib/i18n";
 import { useParams } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";
-
+import * as m from "@/paraglide/messages.js";
 import { cn } from "@/lib/utils";
 import { api } from "@/convex/_generated/api";
 import {
@@ -128,9 +128,9 @@ export const Navigation = () => {
     );
 
     toast.promise(promise, {
-      loading: "Creating a new notiZ...",
-      success: "New notiZ created",
-      error: "Failed to create a new notiZ",
+      loading: m.Creating_a_new_notiZ_(),
+      success: m.New_notiZ_created(),
+      error: m.Failed_to_create_a_new_notiZ(),
     });
   };
 
@@ -156,16 +156,25 @@ export const Navigation = () => {
         </div>
         <div>
           <UserItem />
-          <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
-          <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
-          <Item onClick={handleCreate} label="New Page" icon={PlusCircle} />
+          <Item
+            label={m.Search()}
+            icon={Search}
+            isSearch
+            onClick={search.onOpen}
+          />
+          <Item
+            label={m.Settings()}
+            icon={Settings}
+            onClick={settings.onOpen}
+          />
+          <Item onClick={handleCreate} label={m.New_Page()} icon={PlusCircle} />
         </div>
-        <div className="mt-4 ">
+        <div className="mt-4">
           <DocumentList />
-          <Item onClick={handleCreate} icon={Plus} label="Add a page" />
+          <Item onClick={handleCreate} icon={Plus} label={m.Add_a_page()} />
           <Popover>
             <PopoverTrigger className="mt-4 w-full">
-              <Item label="Trash" icon={Trash} />
+              <Item label={m.Trash()} icon={Trash} />
             </PopoverTrigger>
             <PopoverContent
               className="w-72 p-0"

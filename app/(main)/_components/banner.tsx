@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "@/lib/i18n";
-
+import * as m from "@/paraglide/messages.js";
 import { Id } from "@/convex/_generated/dataModel";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
@@ -35,22 +35,22 @@ export const Banner = ({ documentId }: BannerProps) => {
     const promise = restore({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Restoring notiZ...",
-      success: "notiZ restored",
-      error: "Failed to restore notiZ",
+      loading: m.Restoring_notiZ_(),
+      success: m.notiZ_restored(),
+      error: m.Failed_to_restore_notiZ(),
     });
   };
 
   return (
-    <div className="flex w-full items-center justify-center gap-x-2 bg-rose-500 p-2 text-center text-sm text-white ">
-      <p>This page is in the trash!</p>
+    <div className="flex w-full items-center justify-center gap-x-2 bg-rose-500 p-2 text-center text-sm text-white">
+      <p>{m.This_page_is_in_the_trash()}</p>
       <Button
         size="sm"
         onClick={onRestore}
         variant="outline"
         className="h-auto border-white bg-transparent p-1 px-2 font-normal text-white hover:bg-primary/5 hover:text-white"
       >
-        Restore Page
+        {m.Restore_Page()}
       </Button>
       <ConfirmModal onConfirm={onRemove}>
         <Button
@@ -58,7 +58,7 @@ export const Banner = ({ documentId }: BannerProps) => {
           variant="outline"
           className="h-auto border-white bg-transparent p-1 px-2 font-normal text-white hover:bg-primary/5 hover:text-white"
         >
-          Delete forever
+          {m.Delete_forever()}
         </Button>
       </ConfirmModal>
     </div>

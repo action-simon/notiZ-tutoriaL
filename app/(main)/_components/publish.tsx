@@ -12,6 +12,7 @@ import { api } from "@/convex/_generated/api";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import * as m from "@/paraglide/messages.js";
 import { Check, Copy, Globe } from "lucide-react";
 interface PublishProps {
   initialData: Doc<"documents">;
@@ -35,9 +36,9 @@ export const Publish = ({ initialData }: PublishProps) => {
     }).finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
-      loading: "Publishing...",
-      success: "notiZ published",
-      error: "Failed to publish notiZ",
+      loading: m.Publishing_(),
+      success: m.notiZ_published(),
+      error: m.Failed_to_publish_notiZ(),
     });
   };
 
@@ -50,9 +51,9 @@ export const Publish = ({ initialData }: PublishProps) => {
     }).finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
-      loading: "Unpublishing...",
-      success: "notiZ unpublished",
-      error: "Failed to unpublish notiZ",
+      loading: m.Unpublishing_(),
+      success: m.notiZ_unpublished(),
+      error: m.Failed_to_unpublish_notiZ(),
     });
   };
 
@@ -70,7 +71,7 @@ export const Publish = ({ initialData }: PublishProps) => {
     <Popover>
       <PopoverTrigger asChild>
         <Button size="sm" variant="ghost">
-          Publish
+          {m.Publish()}
           {initialData.isPublished && (
             <Globe className="ml-2 h-4 w-4 text-sky-500" />
           )}
@@ -82,10 +83,10 @@ export const Publish = ({ initialData }: PublishProps) => {
             <div className="flex items-center gap-x-2">
               <Globe className="h-4 w-4 animate-pulse text-sky-500" />
               <p className="text-xs font-medium text-sky-500">
-                This notiZ is live on web.
+                {m.This_notiZ_is_live_on_web_()}
               </p>
             </div>
-            <div className="flex items-center ">
+            <div className="flex items-center">
               <input
                 className="h-8 flex-1 truncate rounded-l-md border bg-muted px-2 text-xs"
                 value={url}
@@ -109,15 +110,15 @@ export const Publish = ({ initialData }: PublishProps) => {
               disabled={isSubmitting}
               onClick={onUnpublish}
             >
-              Unpublish
+              {m.Unpublish()}
             </Button>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center">
             <Globe className="mb-2 h-8 w-8 text-muted-foreground" />
-            <p className="mb-2 text-sm font-medium">Publish this note</p>
+            <p className="mb-2 text-sm font-medium">{m.Publish_this_note()}</p>
             <span className="mb-4 text-xs text-muted-foreground">
-              Share your work with others.
+              {m.Share_your_work_with_others_()}
             </span>
             <Button
               disabled={isSubmitting}
@@ -125,7 +126,7 @@ export const Publish = ({ initialData }: PublishProps) => {
               className="w-full text-xs"
               size="sm"
             >
-              Publish
+              {m.Publish()}
             </Button>
           </div>
         )}

@@ -1,5 +1,5 @@
 "use client";
-
+import * as m from "@/paraglide/messages.js";
 import { useConvexAuth } from "convex/react";
 import { SignInButton, UserButton } from "@clerk/nextjs";
 import { Link } from "@/lib/i18n";
@@ -31,18 +31,18 @@ export const Navbar = () => {
           <>
             <SignInButton mode="modal">
               <Button variant="ghost" size="sm">
-                Log In
+                {m.Log_In()}
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
-              <Button size="sm">Get notiZ free</Button>
+              <Button size="sm">{m.get_notiz_free()}</Button>
             </SignInButton>
           </>
         )}
         {isAuthenticated && !isLoading && (
           <>
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/documents">Enter notiZ</Link>
+              <Link href="/documents">{m.Enter_notiZ()}</Link>
             </Button>
             <UserButton afterSignOutUrl="/" />
           </>

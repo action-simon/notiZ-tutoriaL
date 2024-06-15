@@ -4,7 +4,7 @@ import { useRouter } from "@/lib/i18n";
 import { useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";
-
+import * as m from "@/paraglide/messages.js";
 import { Id } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
 
@@ -34,9 +34,9 @@ export const Menu = ({ documentId }: MenuProps) => {
     const promise = archive({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Removing notiZ...",
-      success: "notiZ removed",
-      error: "Failed to remove notiZ",
+      loading: m.Removing_notiZ_(),
+      success: m.notiZ_removed(),
+      error: m.Failed_to_remove_notiZ(),
     });
 
     router.push("/documents");
@@ -57,11 +57,11 @@ export const Menu = ({ documentId }: MenuProps) => {
       >
         <DropdownMenuItem onClick={onArchive}>
           <Trash className="mr-2 h-4 w-4" />
-          Delete
+          {m.Delete()}
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <div className="p-2 text-xs text-muted-foreground">
-          Last edited by: {user?.username}
+          {m.Last_edited_by()} {user?.username}
         </div>
       </DropdownMenuContent>
     </DropdownMenu>
