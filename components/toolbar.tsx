@@ -97,7 +97,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
               size="sm"
             >
               <Smile className="mr-2 h-4 w-4" />
-              Add icon
+              {m.witty_red_gibbon_dream()}
             </Button>
           </IconPicker>
         )}
@@ -109,7 +109,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
             size="sm"
           >
             <ImageIcon className="mr-2 h-4 w-4" />
-            Add cover
+            {m.noisy_flaky_lamb_hurl()}
           </Button>
         )}
       </div>

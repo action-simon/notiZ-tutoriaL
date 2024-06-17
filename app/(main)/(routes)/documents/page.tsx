@@ -16,8 +16,8 @@ const DocumentsPage = () => {
   const create = useMutation(api.documents.create);
 
   const onCreate = () => {
-    const promise = create({ title: "Untitled" }).then((documentId) =>
-      router.push(`/documents/${documentId}`),
+    const promise = create({ title: m.dull_fun_wombat_gaze() }).then(
+      (documentId) => router.push(`/documents/${documentId}`),
     );
 
     toast.promise(promise, {

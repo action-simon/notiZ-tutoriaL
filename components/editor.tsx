@@ -2,9 +2,8 @@
 import "@blocknote/core/fonts/inter.css";
 import { BlockNoteEditor, PartialBlock } from "@blocknote/core";
 import { useCreateBlockNote } from "@blocknote/react";
-import { BlockNoteView } from "@blocknote/shadcn";
-import "@blocknote/core/style.css";
-//import "@blocknote/mantine/style.css";
+import { BlockNoteView } from "@blocknote/mantine";
+import "@blocknote/mantine/style.css";
 import { useTheme } from "next-themes";
 
 import { useEdgeStore } from "@/lib/edgestore";
@@ -34,12 +33,6 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
   return (
     <div>
       <BlockNoteView
-        shadCNComponents={
-          {
-            // Pass modified ShadCN components from your project here.
-            // Otherwise, the default ShadCN components will be used.
-          }
-        }
         editor={editor}
         editable={editable}
         onChange={() => {

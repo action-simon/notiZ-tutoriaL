@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@blocknote/core": "^0.14.1",
+    "@blocknote/mantine": "^0.14.1",
     "@blocknote/react": "^0.14.1",
     "@blocknote/shadcn": "^0.14.1",
     "@clerk/nextjs": "^5.1.5",
     "@edgestore/react": "^0.1.6",
     "@edgestore/server": "^0.1.6",
+    "@inlang/paraglide-next": "0.4.1",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -40,11 +42,10 @@
     "tailwindcss-animate": "^1.0.7",
     "usehooks-ts": "^3.1.0",
     "zod": "^3.23.8",
-    "zustand": "^4.5.2",
-    "@inlang/paraglide-next": "0.4.1"
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "@types/node": "^20.14.2",
+    "@types/node": "^20.14.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
@@ -52,7 +53,7 @@
     "eslint-config-next": "14.2.4",
     "postcss": "^8.4.38",
     "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.4",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5",
     "@inlang/paraglide-js": "1.9.1"
