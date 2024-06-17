@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ImageIcon, X } from "lucide-react";
 import { useMutation } from "convex/react";
 import { Skeleton } from "./ui/skeleton";
-
+import * as m from "@/paraglide/messages.js";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useCoverImage } from "@/hooks/use-cover-image";
@@ -52,7 +52,7 @@ export const Cover = ({ url, preview }: CoverProps) => {
             size="sm"
           >
             <ImageIcon className="mr-2 h-4 w-4" />
-            Change cover
+            {m.fuzzy_smart_platypus_pride()}
           </Button>
           <Button
             onClick={onRemove}
@@ -61,7 +61,7 @@ export const Cover = ({ url, preview }: CoverProps) => {
             size="sm"
           >
             <X className="mr-2 h-4 w-4" />
-            Delete cover
+            {m.any_spare_mare_chop()}
           </Button>
         </div>
       )}

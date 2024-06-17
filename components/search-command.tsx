@@ -13,6 +13,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
+import * as m from "@/paraglide/messages.js";
 import { useSearch } from "@/hooks/use-search";
 import { api } from "@/convex/_generated/api";
 
@@ -53,9 +54,11 @@ export const SearchCommand = () => {
 
   return (
     <CommandDialog open={isOpen} onOpenChange={onClose}>
-      <CommandInput placeholder={`Search ${user?.username}'s notiZ...`} />
+      <CommandInput
+        placeholder={m.awake_grand_moth_explore({ user: user?.username ?? "" })}
+      />
       <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandEmpty>{m.zany_cute_monkey_rush()}</CommandEmpty>
         <CommandGroup heading="Documents">
           {documents?.map((document) => (
             <CommandItem

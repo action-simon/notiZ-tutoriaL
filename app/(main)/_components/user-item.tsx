@@ -2,7 +2,7 @@
 
 import { ChevronsLeftRight } from "lucide-react";
 import { useUser, SignOutButton } from "@clerk/nextjs";
-
+import * as m from "@/paraglide/messages.js";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -62,7 +62,7 @@ export const UserItem = () => {
           asChild
           className="w-full cursor-pointer text-muted-foreground"
         >
-          <SignOutButton>Log Out</SignOutButton>
+          <SignOutButton>{m.sleek_polite_spider_nudge()}</SignOutButton>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

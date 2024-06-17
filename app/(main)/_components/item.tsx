@@ -75,14 +75,15 @@ export const Item = ({
   const onCreate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
     if (!id) return;
-    const promise = create({ title: "Untitled", parentDocument: id }).then(
-      (documentId) => {
-        if (!expanded) {
-          onExpand?.();
-        }
-        router.push(`/documents/${documentId}`);
-      },
-    );
+    const promise = create({
+      title: m.dull_fun_wombat_gaze(),
+      parentDocument: id,
+    }).then((documentId) => {
+      if (!expanded) {
+        onExpand?.();
+      }
+      router.push(`/documents/${documentId}`);
+    });
 
     toast.promise(promise, {
       loading: m.Creating_a_new_notiZ_(),

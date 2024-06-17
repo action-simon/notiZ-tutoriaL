@@ -15,7 +15,7 @@ import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";
-import * as m from "@/paraglide/messages.js";
+
 import { cn } from "@/lib/utils";
 import { api } from "@/convex/_generated/api";
 import {
@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/popover";
 import { useSearch } from "@/hooks/use-search";
 import { useSettings } from "@/hooks/use-settings";
-
+import * as m from "@/paraglide/messages.js";
 import { UserItem } from "./user-item";
 import { Item } from "./item";
 import { DocumentList } from "./document-list";
@@ -123,8 +123,8 @@ export const Navigation = () => {
   };
 
   const handleCreate = () => {
-    const promise = create({ title: "Untitled" }).then((documentID) =>
-      router.push(`/documents/${documentID}`),
+    const promise = create({ title: m.dull_fun_wombat_gaze() }).then(
+      (documentID) => router.push(`/documents/${documentID}`),
     );
 
     toast.promise(promise, {

@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { useMutation } from "convex/react";
-
+import * as m from "@/paraglide/messages.js";
 import { Doc } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
 import { Input } from "@/components/ui/input";
@@ -16,8 +16,9 @@ interface TitleProps {
 export const Title = ({ initialData }: TitleProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const update = useMutation(api.documents.update);
+  const untitled = m.dull_fun_wombat_gaze();
 
-  const [title, setTitle] = useState(initialData.title || "Untitled");
+  const [title, setTitle] = useState(initialData.title || untitled);
   const [isEditing, setIsEditing] = useState(false);
 
   const enableInput = () => {
@@ -37,7 +38,7 @@ export const Title = ({ initialData }: TitleProps) => {
     setTitle(e.target.value);
     update({
       id: initialData._id,
-      title: e.target.value || "Untitled",
+      title: e.target.value || untitled,
     });
   };
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

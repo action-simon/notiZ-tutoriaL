@@ -74,7 +74,7 @@ export const TrashBin = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="h-7 bg-secondary px-2 focus-visible:ring-transparent"
-          placeholder="Filter by page title..."
+          placeholder={m.zany_dull_angelfish_quiz()}
         />
       </div>
       <div className="mt-2 px-1 pb-1">

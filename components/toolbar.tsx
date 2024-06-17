@@ -3,7 +3,7 @@ import { ElementRef, useRef, useState } from "react";
 import { ImageIcon, Smile, X, icons } from "lucide-react";
 import { useMutation } from "convex/react";
 import TextareaAutosize from "react-textarea-autosize";
-
+import * as m from "@/paraglide/messages.js";
 import { useCoverImage } from "@/hooks/use-cover-image";
 import { Doc } from "@/convex/_generated/dataModel";
 import { Button } from "@/components/ui/button";
@@ -23,7 +23,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
 
   const update = useMutation(api.documents.update);
   const removeIcon = useMutation(api.documents.removeIcon);
-
+  const untitled = m.dull_fun_wombat_gaze();
   const coverImage = useCoverImage();
 
   const enableInput = () => {
@@ -42,7 +42,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
     setValue(value);
     update({
       id: initialData._id,
-      title: value || "Untitled",
+      title: value || untitled,
     });
   };
 
